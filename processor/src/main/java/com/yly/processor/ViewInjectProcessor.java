@@ -67,8 +67,7 @@ public class ViewInjectProcessor extends AbstractProcessor {
             //full class name
             String fqClassName = classElement.getQualifiedName().toString();
 
-            messager.printMessage(Diagnostic.Kind.NOTE, fqClassName);
-
+            messager.printMessage(Diagnostic.Kind.WARNING, fqClassName);//com.yly.annotationdemo.TestActivity
             ProxyInfo proxyInfo = mProxyMap.get(fqClassName);
             if (proxyInfo == null) {
                 proxyInfo = new ProxyInfo(elementUtils, classElement);
